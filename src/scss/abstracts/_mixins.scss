@@ -1,0 +1,43 @@
+@mixin absolutePosition($top, $left, $bottom, $right, $width, $height) {
+	position: absolute;
+	width: $width;
+	height: $height;
+	top: $top;
+	left: $left;
+	right: $right;
+	bottom: $bottom;
+}
+@mixin flexAlign($width, $height, $justifyContent, $alignItem) {
+	display: flex;
+	height: $height;
+	width: $width;
+	justify-content: $justifyContent;
+	align-items: $alignItem;
+}
+@mixin button($radius, $paddingY, $paddingX, $display, $size, $color) {
+	color: $color;
+	border-radius: $radius;
+	padding: $paddingY $paddingX;
+	display: $display;
+	font-size: $size;
+}
+@mixin animation(
+	$name,
+	$duration,
+	$timingFunction,
+	$translateY1,
+	$translateY2
+) {
+	animation: $name $duration $timingFunction;
+
+	@keyframes #{$name} {
+		0% {
+			opacity: 0;
+			transform: translateY($translateY1);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY($translateY2);
+		}
+	}
+}

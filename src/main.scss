@@ -1,0 +1,17 @@
+// import base files
+@import 'scss/base/base';
+
+// import abstract files
+@import 'scss/abstracts/mixins';
+@import 'scss/abstracts/extends';
+@import 'scss/abstracts/variables';
+
+// import layout files
+@import 'scss/layout/layout';
+
+// import util files
+@import 'scss/utils/utils';
+
+// import component files
+@import 'scss/components/header';
+@import 'scss/components/model';

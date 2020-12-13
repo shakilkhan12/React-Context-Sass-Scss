@@ -1,0 +1,56 @@
+.header {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	clip-path: polygon(
+		20% 0%,
+		80% 0%,
+		100% 0,
+		100% 64%,
+		75% 82%,
+		33% 100%,
+		0 100%,
+		0 0
+	);
+
+	&__video {
+		@include absolutePosition(0, 0, 0, 0, 100%, 100%);
+		overflow: hidden;
+	}
+	&__content {
+		@include absolutePosition(0, 0, 0, 0, 100%, 100%);
+		background-color: rgba(0, 0, 0, 0.5);
+		&__text {
+			@include flexAlign(100%, 100vh, center, center);
+			color: $white;
+			&__child {
+				&__h1 {
+					font-size: 4.5rem;
+					font-weight: 800;
+					text-transform: uppercase;
+					@include animation(headingH1, 1s, linear, -8rem, 0px);
+				}
+
+				&__p {
+					font-size: 1.4rem;
+					margin-top: -1rem;
+					@include animation(subHeading, 1s, linear, -10rem, 0px);
+				}
+				&__link {
+					margin-top: 0.8rem;
+					@include animation(linkAnimation, 1s, linear, 10rem, 0px);
+				}
+			}
+		}
+	}
+	&__logo {
+		position: absolute;
+		top: 3rem;
+		left: 0;
+		z-index: 1;
+		& img {
+			width: 15rem;
+			height: auto;
+		}
+	}
+}

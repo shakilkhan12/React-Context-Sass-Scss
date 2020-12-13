@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from 'react';
+import './main.scss';
+import Header from './components/Header';
+import ModelContext from './context/ModelContext';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [modelState, setModelState] = useState(false);
+	const openModel = () => {
+		setModelState(true);
+	};
+	const closeModel = () => {
+		setModelState(false);
+	};
+	return (
+		<ModelContext.Provider value={{ modelState, openModel, closeModel }}>
+			<Header />
+		</ModelContext.Provider>
+	);
 }
 
 export default App;
